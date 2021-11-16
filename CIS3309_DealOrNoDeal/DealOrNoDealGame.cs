@@ -10,13 +10,13 @@ namespace CIS3309_DealOrNoDeal
     {
         private int numCasesOpened = 0;
         private double[] caseValues = { 0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000, 1000000 };
-        private List<int> unopenedCases = new List<int>();
-        private double playerCaseValue = 0;
+        private List<Case> unopenedCases = new List<Case>();
+        private Player player = new Player();
         Random rand = new Random();
 
         public DealOrNoDealGame(int IndexOfPlayerCase)
         {
-            ShuffleCases();
+            ShuffleCaseValues();
             AddCasesToList();
             playerCaseValue = unopenedCases[IndexOfPlayerCase];
         }
@@ -27,7 +27,7 @@ namespace CIS3309_DealOrNoDeal
         }
 
         //using the Fisher-Yates shuffle to shuffle the case values 
-        private void ShuffleCases()
+        private void ShuffleCaseValues()
         {
             int n = caseValues.Length;
             while (n > 1)
@@ -44,7 +44,7 @@ namespace CIS3309_DealOrNoDeal
         {
             for(int i = 0; i < caseValues.Length; i++)
             {
-                unopenedCases.Add(i);
+                unopenedCases.Add(new Case(i, caseValues[i]));
             }
         }
 
