@@ -16,6 +16,15 @@ namespace CIS3309_DealOrNoDeal
             this.value = value;
         }
 
+        public double Value
+        {
+            get { return this.value; }
+        }
+
+        public int ID
+        {
+            get { return this.id; }
+        }
 
     }
 }

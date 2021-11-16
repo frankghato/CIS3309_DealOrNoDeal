@@ -20,7 +20,7 @@ namespace CIS3309_DealOrNoDeal
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(game.PlayerCaseValue.ToString());
+            //MessageBox.Show(game.PlayerCaseValue.ToString());
         }
     }
 }

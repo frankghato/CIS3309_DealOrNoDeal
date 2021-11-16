@@ -17,17 +17,34 @@ namespace CIS3309_DealOrNoDeal
         private int losses;
         private double highestWinnings;
         private double lowestWinnings;
-        private Case chosenCase;
+        private Case playerCase;
 
         public Player()
         {
 
         }
 
+        public Case PlayerCase
+        {
+            get { return this.playerCase; }
+            set { this.playerCase = value; }
+        }
+
         private void SelectCaseToKeep()
         {
 
         }
+
+        private void ReadStatisticsFromDatabase()
+        {
+
+        }
+
+        private void WriteStatisticsToDatabase()
+        {
+
+        }
+
 
     }
 }
