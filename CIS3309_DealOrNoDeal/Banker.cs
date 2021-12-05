@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CIS3309_DealOrNoDeal
 {
-    class Banker
+    public class Banker
     {
         //calculating the mean of the values inside all unopened cases
-        private static double CalculateMeanOfUnopenedCases(List<Case> unopenedCases)
+        public static double CalculateMeanOfUnopenedCases(List<Case> unopenedCases)
         {
             double sum = 0;
             for (int i = 0; i < unopenedCases.Count; i++)
@@ -20,7 +20,7 @@ namespace CIS3309_DealOrNoDeal
         }
 
         //finding the largest value inside all unopened cases
-        private static double GetLargestRemainingCaseValue(List<Case> unopenedCases)
+        public static double GetLargestRemainingCaseValue(List<Case> unopenedCases)
         {
             double largest = unopenedCases[0].Value;
             for (int i = 1; i < unopenedCases.Count; i++)

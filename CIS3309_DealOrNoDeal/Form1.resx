@@ -117,4 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label3.Text" xml:space="preserve">
+    <value>there are 2 ways we can store their stats:
+
+1) we can have players create their own unique id, so
+when they "log in" we update their existing record,
+or if they register then we add a new record for them.
+that's what this current form is meant to be.
+
+2) we store each game individually: the date
+it was played, the player's name, the amount they
+went home with, etc (maybe the case they chose and the
+value of that case? or how many rounds they completed).
+so we'd be making a new record every game but we
+wouldn't have to keep track of players.
+
+either one works for me.</value>
+  </data>
 </root>

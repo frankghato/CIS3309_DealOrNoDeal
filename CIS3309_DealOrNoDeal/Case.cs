@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CIS3309_DealOrNoDeal
 {
-    class Case
+    public class Case
     {
         private int id;
         private double value;
