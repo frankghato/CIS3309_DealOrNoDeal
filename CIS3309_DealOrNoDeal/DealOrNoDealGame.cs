@@ -12,15 +12,16 @@ namespace CIS3309_DealOrNoDeal
         private double[] caseValues = { 0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000, 1000000 };
         private int round = 0;
         private List<Case> unopenedCases = new List<Case>();
-        private Player player = new Player();
+        private Player player;
         private Case playerCase;
         Random rand = new Random();
 
-        public DealOrNoDealGame(int idOfPlayerCase)
+        public DealOrNoDealGame(int idOfPlayerCase, Player player)
         {
             ShuffleCases();
             AddCasesToList();
             playerCase = unopenedCases[idOfPlayerCase - 1];
+            this.player = player;
         }
 
         //using the Fisher-Yates shuffle to shuffle the case values 

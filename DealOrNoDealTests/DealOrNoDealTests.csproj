@@ -52,6 +52,7 @@
     <Compile Include="BankerTests.cs" />
     <Compile Include="CaseTests.cs" />
     <Compile Include="DealOrNoDealGameTests.cs" />
+    <Compile Include="PlayerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

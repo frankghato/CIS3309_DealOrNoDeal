@@ -13,7 +13,7 @@ namespace CIS3309_DealOrNoDeal
     public partial class Game : Form
     {
         EventHandler ChooseCaseDelegate;
-        DealOrNoDealGame game = new DealOrNoDealGame(1);
+        //DealOrNoDealGame game = new DealOrNoDealGame(1);
         public Game()
         {
             InitializeComponent();

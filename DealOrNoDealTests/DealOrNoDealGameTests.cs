@@ -14,7 +14,7 @@ namespace DealOrNoDealTests
         [TestMethod]
         public void DealOrNoDealGame()
         {
-            DealOrNoDealGame game = new DealOrNoDealGame(1);
+            DealOrNoDealGame game = new DealOrNoDealGame(1, new Player(1,"","","",""));
             Assert.IsNotNull(game);
         }
 

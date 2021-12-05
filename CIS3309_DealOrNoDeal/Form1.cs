@@ -12,7 +12,7 @@ namespace CIS3309_DealOrNoDeal
 {
     public partial class Form1 : Form
     {
-        DealOrNoDealGame game = new DealOrNoDealGame(1);
+        //DealOrNoDealGame game = new DealOrNoDealGame(1);
         public Form1()
         {
             InitializeComponent();
