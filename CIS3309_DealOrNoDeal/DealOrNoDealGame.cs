@@ -20,7 +20,7 @@ namespace CIS3309_DealOrNoDeal
         {
             ShuffleCases();
             AddCasesToList();
-            playerCase = unopenedCases[idOfPlayerCase - 1];
+            playerCase = unopenedCases[idOfPlayerCase];
             this.player = player;
         }
 
@@ -52,7 +52,7 @@ namespace CIS3309_DealOrNoDeal
         {
             for(int i = 0; i < caseValues.Length; i++)
             {
-                unopenedCases.Add(new Case(i, caseValues[i]));
+                unopenedCases.Add(new Case(i+1, caseValues[i]));
             }
         }
 
