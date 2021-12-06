@@ -22,5 +22,11 @@ namespace CIS3309_DealOrNoDeal
         {
             //MessageBox.Show(game.PlayerCaseValue.ToString());
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form gameForm = new Game();
+            gameForm.Show();
+        }
     }
 }

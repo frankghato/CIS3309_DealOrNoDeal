@@ -39,7 +39,7 @@ namespace CIS3309_DealOrNoDeal
         {
             double mean = CalculateMeanOfUnopenedCases(unopenedCases);
             int casesLeft = unopenedCases.Count;
-            return 12275.30 + (7.48 * mean) + (-2714.74 * casesLeft)
+            return 12275.30 + (.748 * mean) + (-2714.74 * casesLeft)
                    + (-.04 * GetLargestRemainingCaseValue(unopenedCases))
                    + (.0000006986 * mean * mean)
                    + (32.623 * casesLeft * casesLeft);

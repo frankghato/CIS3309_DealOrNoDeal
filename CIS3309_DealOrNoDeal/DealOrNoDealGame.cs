@@ -8,9 +8,9 @@ namespace CIS3309_DealOrNoDeal
 {
     public class DealOrNoDealGame
     {
-        private int numCasesOpened = 1;
+        private int numCasesOpened = 0;
         private double[] caseValues = { 0.01, 1, 5, 10, 25, 50, 75, 100, 200, 300, 400, 500, 750, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 200000, 300000, 400000, 500000, 750000, 1000000 };
-        private int round = 0;
+        private int round = 1;
         private List<Case> unopenedCases = new List<Case>();
         private Player player;
         private Case playerCase;
@@ -47,21 +47,29 @@ namespace CIS3309_DealOrNoDeal
         }
 
         //removes the case that the player selected and increments the counter for cases opened
-        //if the maximum number of cases per round is opened, present an offer to the player
-        //else return -1 to indicate the round is not over 
-        private double OpenCase(int idOfCase)
+        //returns the value of the case opened
+        public double OpenCase(int idOfCase)
         {
+            double caseValue = -1;
             for(int i = 0; i < unopenedCases.Count; i++)
             {
                 if(unopenedCases[i].ID == idOfCase)
                 {
+                    caseValue = unopenedCases[i].Value;
                     unopenedCases.Remove(unopenedCases[i]);
                 }
             }
             numCasesOpened++;
-
-            if(ShouldOfferBePresented())
+            return caseValue;
+        }
+        
+        //
+        public double PresentOffer()
+        {
+            if (ShouldOfferBePresented())
             {
+                round++;
+                numCasesOpened = 0;
                 return Banker.CalculateBankerOffer(unopenedCases);
             }
 
@@ -70,7 +78,6 @@ namespace CIS3309_DealOrNoDeal
                 return -1;
             }
         }
-        
         //determines if an offer should be presented to the player based on the first round and number of cases opened
         //in the first round a player may open 6 cases
         //in the second round a player may open 5 cases
