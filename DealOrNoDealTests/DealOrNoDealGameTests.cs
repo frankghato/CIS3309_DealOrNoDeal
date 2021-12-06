@@ -72,6 +72,11 @@ namespace DealOrNoDealTests
                 Assert.AreEqual(i + 1, unopenedCases[i].ID);
                 Assert.AreEqual(caseValues[i], unopenedCases[i].Value);
             }
+
+            for(int i = 0; i < caseValues.Length; i++)
+            {
+                Assert.AreNotEqual(-1, unopenedCases[i].Value);
+            }
         }
 
         private double OpenCase(int idOfCase, List<Case> unopenedCases)

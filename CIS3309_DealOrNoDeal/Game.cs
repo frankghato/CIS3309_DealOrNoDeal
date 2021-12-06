@@ -12,10 +12,10 @@ namespace CIS3309_DealOrNoDeal
 {
     public partial class Game : Form
     {
-        EventHandler ChooseCaseDelegate;
         bool isPlayerCaseChosen = false;
         DealOrNoDealGame game;
         double offer;
+        double winnings = 0;
         public Game()
         {
             InitializeComponent();
@@ -31,6 +31,13 @@ namespace CIS3309_DealOrNoDeal
             btnDeclineOffer.Visible = false;
             btnAcceptOffer.Click -= Case_Click;
             btnDeclineOffer.Click -= Case_Click;
+            btnYourCase.Visible = false;
+            btnYourCase.Click -= Case_Click;
+            lblSwapOffer.Visible = false;
+            btnAcceptSwap.Visible = false;
+            btnDeclineSwap.Visible = false;
+            btnAcceptSwap.Click -= Case_Click;
+            btnDeclineSwap.Click -= Case_Click;
         }
 
         private void Case_Click(object sender, EventArgs e)
@@ -42,11 +49,13 @@ namespace CIS3309_DealOrNoDeal
                 //MessageBox.Show("case chosen");
                 isPlayerCaseChosen = true;
                 lblInstructions.Text = "Click on a case to reveal the value inside.";
+                btnYourCase.Visible = true;
+                btnYourCase.Text = btn.Text;
             }
             else
             {
                 double caseValue = game.OpenCase(int.Parse(btn.Text));
-                //MessageBox.Show(caseValue.ToString());
+                MessageBox.Show(caseValue.ToString());
                 foreach(Label lbl in this.Controls.OfType<Label>())
                 {
                     double parsedLabel;
@@ -80,6 +89,7 @@ namespace CIS3309_DealOrNoDeal
             {
                 btn.Visible = false;
             }
+            btnYourCase.Visible = true;
             btnAcceptOffer.Visible = true;
             btnDeclineOffer.Visible = true;
         }
@@ -95,6 +105,53 @@ namespace CIS3309_DealOrNoDeal
             }
             btnAcceptOffer.Visible = false;
             btnDeclineOffer.Visible = false;
+            btnAcceptSwap.Visible = false;
+            btnDeclineSwap.Visible = false;
+
+            if(game.Round == 10)
+            {
+                WhenTwoCasesRemain();
+            }
+        }
+
+        private void GameOver()
+        {
+            foreach (Button btn in this.Controls.OfType<Button>())
+            {
+                btn.Visible = false;
+            }
+            lblSwapOffer.Visible = false;
+            lblYourCase.Visible = false;
+            lblInstructions.Text = "Congratulations, you won: $" + Math.Round(winnings, 2).ToString() + "!";
+        }
+
+        private void btnAcceptOffer_Click(object sender, EventArgs e)
+        {
+            winnings = offer;
+            GameOver();
+        }
+
+        private void WhenTwoCasesRemain()
+        {
+            foreach (Button btn in this.Controls.OfType<Button>())
+            {
+                btn.Visible = false;
+            }
+            lblSwapOffer.Visible = true;
+            btnAcceptSwap.Visible = true;
+            btnDeclineSwap.Visible = true;
+        }
+
+        private void btnDeclineSwap_Click(object sender, EventArgs e)
+        {
+            winnings = game.ValueOfPlayerCase;
+            GameOver();
+        }
+
+        private void btnAcceptSwap_Click(object sender, EventArgs e)
+        {
+            winnings = game.GetValueOfLastCase();
+            GameOver();
         }
     }
 }

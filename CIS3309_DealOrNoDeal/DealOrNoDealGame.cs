@@ -24,6 +24,16 @@ namespace CIS3309_DealOrNoDeal
             this.player = player;
         }
 
+        public int Round
+        {
+            get { return this.round; }
+        }
+
+        public double ValueOfPlayerCase
+        {
+            get { return this.playerCase.Value; }
+        }
+
         //using the Fisher-Yates shuffle to shuffle the case values 
         private void ShuffleCases()
         {
@@ -109,5 +119,17 @@ namespace CIS3309_DealOrNoDeal
             return false;
         }
 
-    }
+        public double GetValueOfLastCase()
+        {
+            for (int i = 0; i < unopenedCases.Count; i++)
+            {
+                if (unopenedCases[i].ID != playerCase.ID)
+                {
+                    return unopenedCases[i].Value;
+                }
+            }
+
+            return -1;
+        }
+}
 }

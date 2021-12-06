@@ -59,8 +59,6 @@ namespace CIS3309_DealOrNoDeal
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblOfferText = new System.Windows.Forms.Label();
             this.lblInstructions = new System.Windows.Forms.Label();
-            this.lblValues = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,6 +89,12 @@ namespace CIS3309_DealOrNoDeal
             this.lblOfferPrompt = new System.Windows.Forms.Label();
             this.btnAcceptOffer = new System.Windows.Forms.Button();
             this.btnDeclineOffer = new System.Windows.Forms.Button();
+            this.btnYourCase = new System.Windows.Forms.Button();
+            this.lblYourCase = new System.Windows.Forms.Label();
+            this.lblRemainingValues = new System.Windows.Forms.Label();
+            this.lblSwapOffer = new System.Windows.Forms.Label();
+            this.btnDeclineSwap = new System.Windows.Forms.Button();
+            this.btnAcceptSwap = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -431,39 +435,17 @@ namespace CIS3309_DealOrNoDeal
             this.lblInstructions.AutoSize = true;
             this.lblInstructions.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInstructions.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblInstructions.Location = new System.Drawing.Point(406, 98);
+            this.lblInstructions.Location = new System.Drawing.Point(386, 90);
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(142, 24);
             this.lblInstructions.TabIndex = 32;
             this.lblInstructions.Text = "lblInstructions";
             // 
-            // lblValues
-            // 
-            this.lblValues.AutoSize = true;
-            this.lblValues.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblValues.Location = new System.Drawing.Point(12, 36);
-            this.lblValues.Name = "lblValues";
-            this.lblValues.Size = new System.Drawing.Size(265, 78);
-            this.lblValues.TabIndex = 34;
-            this.lblValues.Text = "Available Values:\r\n\r\n\r\nall of the cases are buttons\r\nwhen you click one, the text" +
-    " on it is converted to an int\r\nand that\'s passed to the game as the id they sele" +
-    "cted";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(822, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Unavailable Values:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(12, 136);
+            this.label3.Location = new System.Drawing.Point(36, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 36;
@@ -473,7 +455,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Location = new System.Drawing.Point(60, 190);
+            this.label4.Location = new System.Drawing.Point(84, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 37;
@@ -483,7 +465,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(12, 190);
+            this.label5.Location = new System.Drawing.Point(36, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 13);
             this.label5.TabIndex = 38;
@@ -493,7 +475,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.Location = new System.Drawing.Point(60, 160);
+            this.label6.Location = new System.Drawing.Point(84, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 13);
             this.label6.TabIndex = 39;
@@ -503,7 +485,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.Location = new System.Drawing.Point(12, 160);
+            this.label7.Location = new System.Drawing.Point(36, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 13);
             this.label7.TabIndex = 40;
@@ -513,7 +495,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label8.Location = new System.Drawing.Point(60, 136);
+            this.label8.Location = new System.Drawing.Point(84, 90);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(13, 13);
             this.label8.TabIndex = 41;
@@ -523,7 +505,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.Location = new System.Drawing.Point(60, 213);
+            this.label9.Location = new System.Drawing.Point(84, 167);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(25, 13);
             this.label9.TabIndex = 47;
@@ -533,7 +515,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label10.Location = new System.Drawing.Point(12, 237);
+            this.label10.Location = new System.Drawing.Point(36, 191);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(25, 13);
             this.label10.TabIndex = 46;
@@ -543,7 +525,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label11.Location = new System.Drawing.Point(60, 237);
+            this.label11.Location = new System.Drawing.Point(84, 191);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(25, 13);
             this.label11.TabIndex = 45;
@@ -553,7 +535,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label12.Location = new System.Drawing.Point(12, 267);
+            this.label12.Location = new System.Drawing.Point(36, 221);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(25, 13);
             this.label12.TabIndex = 44;
@@ -563,7 +545,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label13.Location = new System.Drawing.Point(60, 267);
+            this.label13.Location = new System.Drawing.Point(84, 221);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(25, 13);
             this.label13.TabIndex = 43;
@@ -573,7 +555,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label14.Location = new System.Drawing.Point(12, 213);
+            this.label14.Location = new System.Drawing.Point(36, 167);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(19, 13);
             this.label14.TabIndex = 42;
@@ -583,7 +565,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label15.Location = new System.Drawing.Point(60, 374);
+            this.label15.Location = new System.Drawing.Point(84, 328);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(43, 13);
             this.label15.TabIndex = 59;
@@ -593,7 +575,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label16.Location = new System.Drawing.Point(12, 398);
+            this.label16.Location = new System.Drawing.Point(36, 352);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 58;
@@ -603,7 +585,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label17.Location = new System.Drawing.Point(60, 398);
+            this.label17.Location = new System.Drawing.Point(84, 352);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(43, 13);
             this.label17.TabIndex = 57;
@@ -613,7 +595,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label18.Location = new System.Drawing.Point(12, 428);
+            this.label18.Location = new System.Drawing.Point(36, 382);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 13);
             this.label18.TabIndex = 56;
@@ -623,7 +605,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label19.Location = new System.Drawing.Point(60, 428);
+            this.label19.Location = new System.Drawing.Point(84, 382);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(43, 13);
             this.label19.TabIndex = 55;
@@ -633,7 +615,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label20.Location = new System.Drawing.Point(12, 374);
+            this.label20.Location = new System.Drawing.Point(36, 328);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(37, 13);
             this.label20.TabIndex = 54;
@@ -643,7 +625,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label21.Location = new System.Drawing.Point(60, 297);
+            this.label21.Location = new System.Drawing.Point(84, 251);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(31, 13);
             this.label21.TabIndex = 53;
@@ -653,7 +635,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label22.Location = new System.Drawing.Point(12, 321);
+            this.label22.Location = new System.Drawing.Point(36, 275);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(31, 13);
             this.label22.TabIndex = 52;
@@ -663,7 +645,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label23.Location = new System.Drawing.Point(60, 321);
+            this.label23.Location = new System.Drawing.Point(84, 275);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 13);
             this.label23.TabIndex = 51;
@@ -673,7 +655,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label24.AutoSize = true;
             this.label24.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label24.Location = new System.Drawing.Point(12, 351);
+            this.label24.Location = new System.Drawing.Point(36, 305);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(37, 13);
             this.label24.TabIndex = 50;
@@ -683,7 +665,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label25.Location = new System.Drawing.Point(60, 351);
+            this.label25.Location = new System.Drawing.Point(84, 305);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(37, 13);
             this.label25.TabIndex = 49;
@@ -693,7 +675,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label26.Location = new System.Drawing.Point(12, 297);
+            this.label26.Location = new System.Drawing.Point(36, 251);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(25, 13);
             this.label26.TabIndex = 48;
@@ -703,7 +685,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label27.AutoSize = true;
             this.label27.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label27.Location = new System.Drawing.Point(12, 453);
+            this.label27.Location = new System.Drawing.Point(36, 407);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(43, 13);
             this.label27.TabIndex = 61;
@@ -713,7 +695,7 @@ namespace CIS3309_DealOrNoDeal
             // 
             this.label28.AutoSize = true;
             this.label28.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label28.Location = new System.Drawing.Point(60, 453);
+            this.label28.Location = new System.Drawing.Point(84, 407);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(49, 13);
             this.label28.TabIndex = 60;
@@ -747,6 +729,7 @@ namespace CIS3309_DealOrNoDeal
             this.btnAcceptOffer.TabIndex = 64;
             this.btnAcceptOffer.Text = "Accept";
             this.btnAcceptOffer.UseVisualStyleBackColor = true;
+            this.btnAcceptOffer.Click += new System.EventHandler(this.btnAcceptOffer_Click);
             // 
             // btnDeclineOffer
             // 
@@ -758,12 +741,81 @@ namespace CIS3309_DealOrNoDeal
             this.btnDeclineOffer.UseVisualStyleBackColor = true;
             this.btnDeclineOffer.Click += new System.EventHandler(this.btnDeclineOffer_Click);
             // 
+            // btnYourCase
+            // 
+            this.btnYourCase.BackColor = System.Drawing.Color.Transparent;
+            this.btnYourCase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnYourCase.BackgroundImage")));
+            this.btnYourCase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnYourCase.Location = new System.Drawing.Point(252, 423);
+            this.btnYourCase.Name = "btnYourCase";
+            this.btnYourCase.Size = new System.Drawing.Size(52, 36);
+            this.btnYourCase.TabIndex = 66;
+            this.btnYourCase.Text = "1";
+            this.btnYourCase.UseVisualStyleBackColor = false;
+            // 
+            // lblYourCase
+            // 
+            this.lblYourCase.AutoSize = true;
+            this.lblYourCase.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblYourCase.Location = new System.Drawing.Point(249, 398);
+            this.lblYourCase.Name = "lblYourCase";
+            this.lblYourCase.Size = new System.Drawing.Size(59, 13);
+            this.lblYourCase.TabIndex = 67;
+            this.lblYourCase.Text = "Your Case:";
+            // 
+            // lblRemainingValues
+            // 
+            this.lblRemainingValues.AutoSize = true;
+            this.lblRemainingValues.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRemainingValues.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblRemainingValues.Location = new System.Drawing.Point(12, 53);
+            this.lblRemainingValues.Name = "lblRemainingValues";
+            this.lblRemainingValues.Size = new System.Drawing.Size(174, 24);
+            this.lblRemainingValues.TabIndex = 68;
+            this.lblRemainingValues.Text = "Remaining Values";
+            // 
+            // lblSwapOffer
+            // 
+            this.lblSwapOffer.AutoSize = true;
+            this.lblSwapOffer.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblSwapOffer.Location = new System.Drawing.Point(358, 388);
+            this.lblSwapOffer.Name = "lblSwapOffer";
+            this.lblSwapOffer.Size = new System.Drawing.Size(154, 13);
+            this.lblSwapOffer.TabIndex = 69;
+            this.lblSwapOffer.Text = "Would you like to swap cases?";
+            // 
+            // btnDeclineSwap
+            // 
+            this.btnDeclineSwap.Location = new System.Drawing.Point(458, 423);
+            this.btnDeclineSwap.Name = "btnDeclineSwap";
+            this.btnDeclineSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnDeclineSwap.TabIndex = 71;
+            this.btnDeclineSwap.Text = "Decline";
+            this.btnDeclineSwap.UseVisualStyleBackColor = true;
+            this.btnDeclineSwap.Click += new System.EventHandler(this.btnDeclineSwap_Click);
+            // 
+            // btnAcceptSwap
+            // 
+            this.btnAcceptSwap.Location = new System.Drawing.Point(361, 423);
+            this.btnAcceptSwap.Name = "btnAcceptSwap";
+            this.btnAcceptSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnAcceptSwap.TabIndex = 70;
+            this.btnAcceptSwap.Text = "Accept";
+            this.btnAcceptSwap.UseVisualStyleBackColor = true;
+            this.btnAcceptSwap.Click += new System.EventHandler(this.btnAcceptSwap_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(945, 521);
+            this.Controls.Add(this.btnDeclineSwap);
+            this.Controls.Add(this.btnAcceptSwap);
+            this.Controls.Add(this.lblSwapOffer);
+            this.Controls.Add(this.lblRemainingValues);
+            this.Controls.Add(this.lblYourCase);
+            this.Controls.Add(this.btnYourCase);
             this.Controls.Add(this.btnDeclineOffer);
             this.Controls.Add(this.btnAcceptOffer);
             this.Controls.Add(this.lblOfferPrompt);
@@ -794,8 +846,6 @@ namespace CIS3309_DealOrNoDeal
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblValues);
             this.Controls.Add(this.lblInstructions);
             this.Controls.Add(this.lblOfferText);
             this.Controls.Add(this.pictureBox1);
@@ -865,8 +915,6 @@ namespace CIS3309_DealOrNoDeal
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblOfferText;
         private System.Windows.Forms.Label lblInstructions;
-        private System.Windows.Forms.Label lblValues;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -897,5 +945,11 @@ namespace CIS3309_DealOrNoDeal
         private System.Windows.Forms.Label lblOfferPrompt;
         private System.Windows.Forms.Button btnAcceptOffer;
         private System.Windows.Forms.Button btnDeclineOffer;
+        private System.Windows.Forms.Button btnYourCase;
+        private System.Windows.Forms.Label lblYourCase;
+        private System.Windows.Forms.Label lblRemainingValues;
+        private System.Windows.Forms.Label lblSwapOffer;
+        private System.Windows.Forms.Button btnDeclineSwap;
+        private System.Windows.Forms.Button btnAcceptSwap;
     }
 }
