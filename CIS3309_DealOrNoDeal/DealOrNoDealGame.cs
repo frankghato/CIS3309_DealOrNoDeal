@@ -13,15 +13,16 @@ namespace CIS3309_DealOrNoDeal
         private int round = 1;
         private List<Case> unopenedCases = new List<Case>();
         private Player player;
+        private StatsDatabase db = new StatsDatabase();
         private Case playerCase;
         Random rand = new Random();
 
-        public DealOrNoDealGame(int idOfPlayerCase, Player player)
+        public DealOrNoDealGame(int idOfPlayerCase, int playerID)
         {
             ShuffleCases();
             AddCasesToList();
             playerCase = unopenedCases[idOfPlayerCase];
-            this.player = player;
+            player = db.ValidatePlayer(playerID);
         }
 
         public int Round
@@ -130,6 +131,29 @@ namespace CIS3309_DealOrNoDeal
             }
 
             return -1;
+        }
+
+        public int EndGame(double winnings)
+        {
+            if (Decimal.ToDouble(player.HighestWinnings) == 0 && Decimal.ToDouble(player.LowestWinnings) == 0) {
+                player.HighestWinnings = (decimal)winnings;
+                player.LowestWinnings = (decimal)winnings;
+            }
+            if (Decimal.ToDouble(player.HighestWinnings) < winnings)
+            {
+                player.HighestWinnings = (decimal)winnings;
+            }
+            if (Decimal.ToDouble(player.LowestWinnings) > winnings)
+            {
+                player.LowestWinnings = (decimal)winnings;
+            }
+            if (winnings == 1000000)
+            {
+                int millions = player.MillionsWon;
+                player.MillionsWon = millions++;
+            }
+            player.GamesPlayed += 1;
+            return db.UpdatePlayer(player);
         }
 }
 }

@@ -14,15 +14,20 @@ namespace CIS3309_DealOrNoDeal
     {
         bool isPlayerCaseChosen = false;
         DealOrNoDealGame game;
+        int playerID;
         double offer;
         double winnings = 0;
-        public Game()
+        public Game(int playerID)
         {
             InitializeComponent();
+            this.playerID = playerID;
             lblInstructions.Text = "Click on a case to choose your case.";
             foreach(Button btn in this.Controls.OfType<Button>())
             {
-                btn.Click += Case_Click;
+                if (btn.Name != "btnHowToPlay")
+                {
+                    btn.Click += Case_Click;
+                }
             }
             lblOffer.Visible = false;
             lblOfferText.Visible = false;
@@ -45,7 +50,7 @@ namespace CIS3309_DealOrNoDeal
             Button btn = sender as Button;
             if(!isPlayerCaseChosen)
             {
-                game = new DealOrNoDealGame(int.Parse(btn.Text), new Player());
+                game = new DealOrNoDealGame(int.Parse(btn.Text), playerID);
                 //MessageBox.Show("case chosen");
                 isPlayerCaseChosen = true;
                 lblInstructions.Text = "Click on a case to reveal the value inside.";
@@ -122,7 +127,9 @@ namespace CIS3309_DealOrNoDeal
             }
             lblSwapOffer.Visible = false;
             lblYourCase.Visible = false;
-            lblInstructions.Text = "Congratulations, you won: $" + Math.Round(winnings, 2).ToString() + "!";
+            MessageBox.Show("Congratulations, you won: $" + Math.Round(winnings, 2).ToString() + "!" + "\n" +
+            game.EndGame(winnings) + " player record updated.");
+            this.Close();
         }
 
         private void btnAcceptOffer_Click(object sender, EventArgs e)
@@ -152,6 +159,12 @@ namespace CIS3309_DealOrNoDeal
         {
             winnings = game.GetValueOfLastCase();
             GameOver();
+        }
+
+        private void btnHowToPlay_Click(object sender, EventArgs e)
+        {
+            InstructionsForm form = new InstructionsForm();
+            form.Show();
         }
     }
 }

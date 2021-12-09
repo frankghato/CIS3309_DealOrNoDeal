@@ -19,11 +19,14 @@ namespace CIS3309_DealOrNoDeal.Tests
             unopenedCases.Add(new Case(2, 2));
             unopenedCases.Add(new Case(3, 3));
             double firstOffer = Banker.CalculateBankerOffer(unopenedCases);
+            Assert.AreEqual(Math.Round(4426.0630027944, 2), Math.Round(firstOffer, 2));
             unopenedCases.Add(new Case(4, 4));
             double secondOffer = Banker.CalculateBankerOffer(unopenedCases);
+            Assert.AreEqual(Math.Round(1940.01800436625, 2), Math.Round(secondOffer, 2));
             Assert.AreNotEqual(firstOffer, secondOffer);
             unopenedCases.Add(new Case(4, 5));
             double thirdOffer = Banker.CalculateBankerOffer(unopenedCases);
+            Assert.AreEqual(1, thirdOffer);
             Assert.AreNotEqual(firstOffer, thirdOffer);
             Assert.AreNotEqual(secondOffer, thirdOffer);
         }

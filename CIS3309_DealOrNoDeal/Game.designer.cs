@@ -95,6 +95,7 @@ namespace CIS3309_DealOrNoDeal
             this.lblSwapOffer = new System.Windows.Forms.Label();
             this.btnDeclineSwap = new System.Windows.Forms.Button();
             this.btnAcceptSwap = new System.Windows.Forms.Button();
+            this.btnHowToPlay = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -804,12 +805,27 @@ namespace CIS3309_DealOrNoDeal
             this.btnAcceptSwap.UseVisualStyleBackColor = true;
             this.btnAcceptSwap.Click += new System.EventHandler(this.btnAcceptSwap_Click);
             // 
+            // btnHowToPlay
+            // 
+            this.btnHowToPlay.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnHowToPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHowToPlay.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHowToPlay.ForeColor = System.Drawing.Color.Black;
+            this.btnHowToPlay.Location = new System.Drawing.Point(882, 26);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(125, 32);
+            this.btnHowToPlay.TabIndex = 72;
+            this.btnHowToPlay.Text = "How to Play";
+            this.btnHowToPlay.UseVisualStyleBackColor = false;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(945, 521);
+            this.ClientSize = new System.Drawing.Size(1052, 521);
+            this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.btnDeclineSwap);
             this.Controls.Add(this.btnAcceptSwap);
             this.Controls.Add(this.lblSwapOffer);
@@ -951,5 +967,6 @@ namespace CIS3309_DealOrNoDeal
         private System.Windows.Forms.Label lblSwapOffer;
         private System.Windows.Forms.Button btnDeclineSwap;
         private System.Windows.Forms.Button btnAcceptSwap;
+        private System.Windows.Forms.Button btnHowToPlay;
     }
 }

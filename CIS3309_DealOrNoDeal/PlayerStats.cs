@@ -1,42 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CIS3309_DealOrNoDeal
 {
-    class PlayerStats
+    public partial class PlayerStats : Form
     {
-        private int playerID;
-        private int millionsWon;
-        private double highestWinnings;
-        private double averageWinnings;
-        private double lowestWinnings;
-
-        public int PlayerID
+        public PlayerStats()
         {
-            get { return this.playerID; }
-        }
-
-        public void DisplayWins()
-        {
-
-        }
-
-        public void DisplayWinnings()
-        {
-
-        }
-
-        private void ReadStatisticsFromDatabase()
-        {
-
-        }
-
-        private void WriteStatisticsToDatabase()
-        {
-
+            InitializeComponent();
+            StatsDatabase db = new StatsDatabase();
+            db.LoadStatistics();
+            dgvPlayerStats.DataSource = db.TheDataTable;
         }
     }
 }

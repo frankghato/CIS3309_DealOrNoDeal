@@ -9,48 +9,89 @@ namespace CIS3309_DealOrNoDeal
     public class Player
     {
         private int id;
-        private String firstName;
-        private String lastName;
-        private String dateOfBirth;
-        private String address;
+        private string firstName;
+        private string lastName;
+        private string dateOfBirth;
+        private string address;
+        private decimal highestWinnings;
+        private decimal lowestWinnings;
+        private int gamesPlayed;
+        private int millionsWon;
 
         public Player()
         {
 
         }
 
-        public Player(int id, String firstName, String lastName, String dateOfBirth, String address)
+        public Player(int id, decimal highestWinnings, decimal lowestWinnings, int gamesPlayed, int millionsWon)
         {
             this.id = id;
+            this.highestWinnings = highestWinnings;
+            this.lowestWinnings = lowestWinnings;
+            this.gamesPlayed = gamesPlayed;
+            this.millionsWon = millionsWon;
+        }
+
+        public Player(string firstName, string lastName, string dateOfBirth, string address)
+        {
             this.firstName = firstName;
             this.lastName = lastName;
             this.dateOfBirth = dateOfBirth;
             this.address = address;
+            gamesPlayed = 0;
+            millionsWon = 0;
+            highestWinnings = 0;
+            lowestWinnings = 0;
         }
 
         public int ID
         {
-            get { return this.id; }
+            get { return id; }
         }
 
-        public String FirstName
+        public string FirstName
         {
-            get { return this.firstName; }
+            get { return firstName; }
         }
 
-        public String LastName
+        public string LastName
         {
-            get { return this.LastName; }
+            get { return lastName; }
         }
 
-        public String DateOfBirth
+        public string DateOfBirth
         {
-            get { return this.dateOfBirth; }
+            get { return dateOfBirth; }
         }
 
-        public String Address
+        public string Address
         {
-            get { return this.address; }
+            get { return address; }
+        }
+
+        public decimal HighestWinnings
+        {
+            get { return highestWinnings; }
+            set { highestWinnings = value; }
+        }
+
+        public decimal LowestWinnings
+        {
+            get { return lowestWinnings; }
+            set { lowestWinnings = value; }
+        }
+
+        public int GamesPlayed
+        {
+            get { return gamesPlayed; }
+            set { gamesPlayed = value; }
+        }
+
+        public int MillionsWon
+        {
+            get { return millionsWon; }
+            set { millionsWon = value; }
         }
     }
 }
+

@@ -8,6 +8,7 @@ namespace CIS3309_DealOrNoDeal
 {
     public class Banker
     {
+        private static double deal;
         //calculating the mean of the values inside all unopened cases
         public static double CalculateMeanOfUnopenedCases(List<Case> unopenedCases)
         {
@@ -39,11 +40,15 @@ namespace CIS3309_DealOrNoDeal
         {
             double mean = CalculateMeanOfUnopenedCases(unopenedCases);
             int casesLeft = unopenedCases.Count;
-            return 12275.30 + (.748 * mean) + (-2714.74 * casesLeft)
+            deal = 12275.30 + (.748 * mean) + (-2714.74 * casesLeft)
                    + (-.04 * GetLargestRemainingCaseValue(unopenedCases))
                    + (.0000006986 * mean * mean)
                    + (32.623 * casesLeft * casesLeft);
+            if (deal < 0)
+            {
+                return 1.00;
+            }
+            return deal;
         }
-
     }
 }
